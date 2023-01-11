@@ -8,7 +8,6 @@ public class UtopiaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(UtopiaApplication.class, args);
-		int a = 1;
 	}	
 
 }
