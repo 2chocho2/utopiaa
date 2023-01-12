@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="board.mapper.LoginMapper">
+<mapper namespace="utopia.mapper.LoginMapper">
 	<select id="login" parameterType="utopia.dto.LoginDto" resultType="utopia.dto.MemberDto">
 		select member_id, member_pw, member_name, member_email 
 		  from t_member 
