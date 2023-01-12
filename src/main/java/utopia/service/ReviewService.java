@@ -13,7 +13,7 @@ public interface ReviewService {
 	
 	// 리뷰 작성
 	// // 리뷰 사진 저장
-	public void insertReview(ReviewDto reviewDto) throws Exception;
+	public void insertReview(ReviewDto reviewDto, MultipartFile file) throws Exception;
 	String saveFile(MultipartFile file) throws Exception;
 	
 	// 리뷰 상세 조회
@@ -24,5 +24,6 @@ public interface ReviewService {
 	
 	// 리뷰 삭제
 	public void deleteReview(int ReviewId) throws Exception;
+
 	
 }

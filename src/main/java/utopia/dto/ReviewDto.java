@@ -8,5 +8,6 @@ public class ReviewDto {
 	private int reviewId;
 	private String reviewTitle;
 	private String reviewContents;
+	private String reviewImage;
 	
 }
