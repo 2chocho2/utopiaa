@@ -14,4 +14,9 @@ public class LoginServiceImpl implements LoginService {
 	public MemberDto login(LoginDto loginDto) throws Exception {
 		return loginMapper.login(loginDto);
 	}
+	@Override
+	public void memberInsert(MemberDto memberDto) throws Exception {
+
+		loginMapper.memberInsert(memberDto);
+	}
 }

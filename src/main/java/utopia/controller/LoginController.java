@@ -39,5 +39,13 @@ public class LoginController {
 		}
 	}
 	
+	@PostMapping("/utopia/signup.do")
+	public String memberInsert(MemberDto memberDto) throws Exception {
+	
+	loginService.memberInsert(memberDto);
+	return "redirect:utopia/login.do";
+	
+	
+}
 	
 }
