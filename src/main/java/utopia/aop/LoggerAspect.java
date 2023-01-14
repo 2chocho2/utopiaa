@@ -19,6 +19,7 @@ public class LoggerAspect {
 	public Object logPrinter(ProceedingJoinPoint joinPoint) throws Throwable {
 		String className = joinPoint.getSignature().getDeclaringTypeName();
 		String methodName = joinPoint.getSignature().getName();
+		log.debug(className + "." + methodName + "()");
 		return joinPoint.proceed();
 	}
 }
