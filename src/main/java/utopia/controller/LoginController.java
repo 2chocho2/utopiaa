@@ -17,17 +17,17 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 	
-	@GetMapping("utopia/login.do")
+	@GetMapping("/utopia/login.do")
 	public String login(HttpSession session) throws Exception {
 		if (session.getAttribute("memberEmail") == null) {
 			return "login.html";
 		}else {
-			return "redirect:/perfumeList.do";
+			return "redirect:/utopia/perfume";
 		}
 	}
 	
 	
-	@PostMapping("utopia/login.do")
+	@PostMapping("/utopia/login.do")
 	public String login(LoginDto loginDto, HttpSession session) throws Exception {
 		
 		MemberDto memberDto = loginService.login(loginDto);
@@ -37,9 +37,10 @@ public class LoginController {
 			return "redirect:/login.do";
 		}else {
 			session.setAttribute("member", memberDto);
-			return "redirect:/perfumeList.do";
+			return "redirect:/utopia/perfume";
 		}
 	}
+
 	
 	@RequestMapping("/utopia/openSignup.do")
 	public String openSignup() throws Exception{
@@ -54,5 +55,3 @@ public class LoginController {
 		
 	
 }
-	
-
