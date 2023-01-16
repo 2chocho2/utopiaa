@@ -5,15 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import lombok.extern.slf4j.Slf4j;
 import utopia.dto.BrandDto;
 import utopia.dto.PerfumeDto;
 import utopia.service.PerfumeService;
 
 @Controller
+@Slf4j
 public class PerfumeController {
 
 	@Autowired
@@ -39,15 +42,27 @@ public class PerfumeController {
 		List<BrandDto> brandDto = perfumeService.selectBrandList();
 		mv.addObject("brandlist", brandDto);
 		
-		
 		return mv;
 	}
 	
-	@PostMapping("/utopia/updateThumbsCount.do")
-	public String updateHitCount(int perfumeId) throws Exception {
-		perfumeService.updateHitCount(perfumeId);
-		return "redirect:/utopia/perfume";
-	}
+
+	  @RequestMapping("/utopia/updateThumbsCount")
+	  public String UpdateThumbsCount(int perfumeId) throws Exception { 
+		  perfumeService.updateThumbsCount(perfumeId); 
+		  return "redirect:/utopia/perfume";
+	 }
+	
+//	@GetMapping("/utopia/updateThumbsCount")
+//	public ModelAndView updateThumbsCount(@RequestParam int perfumeId) throws Exception {
+//		ModelAndView mv = new ModelAndView("/utopia/perfume");
+//		
+//		PerfumeDto perfumeDto = perfumeService.updateThumbsCount(perfumeId);
+//		mv.addObject(perfumeDto);
+//		
+//		return mv;
+//	}
+	 	
+
 	
 	
 	

@@ -39,8 +39,8 @@ public class PerfumeServiceImpl implements PerfumeService {
 	}
 
 	@Override
-	public void updateHitCount(int perfumeId) throws Exception {
-		perfumeMapper.updateHitCount(perfumeId);
+	public void updateThumbsCount(int perfumeId) throws Exception {
+		perfumeMapper.updateThumbsCount(perfumeId);
 	}
 }
 

@@ -15,8 +15,6 @@ public interface PerfumeMapper {
 	List<BrandDto> selectBrand(int brandId) throws Exception;
 	List<PerfumeDto> selectBrandPerfumeList(int brandId) throws Exception;
 	
-	void updateHitCount(int perfumeId) throws Exception;
-	
-	
-	
+	public void updateThumbsCount(int perfumeId) throws Exception;
+
 }
