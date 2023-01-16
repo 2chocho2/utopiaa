@@ -1,63 +1,74 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html lang="ko"  xmlns="http://www.thymeleaf.org">
+<html lang="ko"  xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>제품소개</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta charset="UTF-8">
+	<title>제품소개</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<link href='http://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/css/perfume.css" />
+	<link rel="stylesheet" href="/css/perfume.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+	 <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
 </head>
 <body>
-<div id="wrapper">
-  <!-- 로고 메인 이미지 -->
-  <div id="header"><h1><a href="#">이상香</a></h1>
+<!-- 네비게이션 -->
+  <div id="header">
+    <nav class="top" >
+      <a id="logo" href="/utopia/main.html"><img src="./img/utopia_logo.png"></a>
+      <ul>
+        <li><a href="">홈화면</a></li>
+        <li><a href="">제품목록</a></li>
+        <li><a href="">대화의창</a></li>
+      </ul>
+      <div class="login_message">
+        <p><a href="">님 환영합니다~!! **✲ﾟ*(❁´▽`❁)*✲ﾟ**</a></p>
+      </div>
+    </nav>
   </div>
   
-  <!-- 홈 메뉴 -->
-  <div class="category">
-<div class="category-inner">
-	<nav class="menu">
-	<ul>
-	<li><a href="#">홈 화면</a></li>
-	<li><a href="#">제품목록</a></li>
-	<li><a href="#">대화의 창</a></li>
-	</ul>
-	</nav>
-</div>
-</div>
-  
-  <!-- 브랜드 카테고리 -->
-<div id="leftmenu"> 
-<!--브랜드 클릭하면 전체리스트 노출-->
-  <p><a href="#">브랜드</a></p>
-  <br></br>
-  <ul>
- <a href="/utopia/perfume/chanel">샤넬</a>
-            <br></br>
-            <a href="/utopia/perfume/jomalone">조말론</a>
-            <br></br>
-            <a href="/utopia/perfume/acqua">아쿠아 디 파르마</a>
-            <br></br>
-            <a href="/utopia/perfume/byredo">바이레도</a>
-            <br></br>
-            <a href="/utopia/perfume/diptyque">딥디크</a>
-            <br></br>
-         </ul>
-      </div>
+<!-- 브랜드 카테고리 -->
+ 
+  <div class="box1">
+	 <p class="brand"><a href="/utopia/perfume">브랜드 전체 보기 </a></p>
+	     <br></br>
+	     <th:block th:each="brand : ${brandlist}">
+	        <a href="/utopia/perfume?brandId=" th:attrappend="href=${brand.brandId}" th:text="${brand.brandName}"></a>
+	      <br /><br />
+	   </th:block>
+ </div>
+
    
 
-  <!-- 향수 리스트 -->
-  <div class="perfumelist"> 
-    <p>클릭한 브랜드명 들어갈자리</p>
-    	<img src="img/red-150x150.jpg" alt="">
-    	<ul th:block th:each="perfume : ${list}" style="float:left; padding:10px; border: solid black; width: calc(100% / 4);" ><a href="#" >
-			<li> 이름: [[${perfume.perfumeName}]]</li><br>
-			<li> 좋아요 수: [[${perfume.thumbsCt}]]</li><br>
-			<li> 가격: [[${perfume.perfumePrice}]]</li><br>
-			<li> 브랜드: [[${perfume.brandName}]]</li>
-			</a>
-			</ul>
-			
+    <!-- 향수 리스트 배경 -->
+      <div class="box2">
+      <div>
+          <div class=number>
+            <ul class="123">
+            <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+              <ul>
+          </div>
+  </div>
+    <!--향수 리스트-->
+    <div class= "box3">
+    
+       <ul th:block th:each="perfume : ${perfumeList}" style="float:left; padding:30px;   height: 400px; border: solid black; width: calc(100% / 4);" >
+       <a href="#" >
+          
+         <li> 이름: [[${perfume.perfumeName}]]</li><br>
+         <li> 좋아요 수: [[${perfume.thumbsCt}]]</li><br>
+         <li> 가격: [[${perfume.perfumePrice}]]</li><br>
+         <li> 브랜드: [[${perfume.brandName}]]</li>
+				<i class="fas fa-heart" > <a href="/utopia/updateThumbsCount.do"></a></i>
+				
+         <img src="" th:attrappend="src=${perfume.perfumeImage}"></img>
+         </ul>
+         
+         <!-- jQuery 라이브러리를 불러옴 -->
+
   <br></br>
   <ul>
 

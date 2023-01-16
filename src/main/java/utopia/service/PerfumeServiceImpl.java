@@ -16,21 +16,31 @@ public class PerfumeServiceImpl implements PerfumeService {
 	
 	// 제품조회
 	@Autowired
-	private PerfumeMapper productMapper;
+	private PerfumeMapper perfumeMapper;
 
 	@Override
 	public List<PerfumeDto> selectPerfumeList() throws Exception {
-		return productMapper.selectPerfumeList();
+		return perfumeMapper.selectPerfumeList();
 	}
 
 	@Override
 	public List<BrandDto> selectBrandList() throws Exception {
-		return productMapper.selectBrandList();
+		return perfumeMapper.selectBrandList();
 	}
 
 	@Override
 	public List<BrandDto> selectBrand(int brandId) throws Exception {
-		return productMapper.selectBrand(brandId);
+		return perfumeMapper.selectBrand(brandId);
 	}
+
+	@Override
+	public List<PerfumeDto> selectBrandPerfumeList(int brandId) throws Exception {
+		return perfumeMapper.selectBrandPerfumeList(brandId);
 	}
+
+	@Override
+	public void updateHitCount(int perfumeId) throws Exception {
+		perfumeMapper.updateHitCount(perfumeId);
+	}
+}
 

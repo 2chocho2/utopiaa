@@ -6,17 +6,19 @@
 
 	<!-- 향수제품 리스트 -->
 	<select id="selectPerfumeList" resultType="utopia.dto.PerfumeDto">
-		select perfume_id, perfume_name, perfume_price,thumbs_ct, brand_name
-		  from t_perfume, t_brand  
-      order by thumbs_ct desc
-		      <!-- limit 30	 -->
+	     select p.perfume_id, perfume_name, perfume_price,thumbs_ct, brand_name, perfume_img as perfumeImage
+        from t_perfume p, t_brand b, t_perfume_brand pb
+        where p.perfume_id = pb.perfume_id
+        and b.brand_id = pb.brand_id
+       	order by thumbs_ct desc
+       	limit 30
 	</select>
 			
 <!--	추천수-->
 	<update id="updateThumbsCount" parameterType="int">
 		update t_perfume 
 		   set thumbs_ct = thumbs_ct + 1
-		 where board_idx = #{boardIdx}
+		 where perfume_id = #{perfumeId}
 	</update>
 	
 	<!--브랜드 정보 조회   -->
@@ -25,21 +27,26 @@
 		  from t_brand
 	</select> -->
 	
-	<select id="selectBrand" parameterType="int" resultType="utopia.dto.PerfumeDto">
+<select id="selectBrand" parameterType="int" resultType="utopia.dto.PerfumeDto">
 		select brand_name 
 		  from t_perfume_brand pb, t_brand b
 		 where pb.brand_id = #{brandId}
 		   and pb.brand_id = b.brand_id 
 	</select>
 	
-	<select id="selectBrandList" parameterType="int" resultType="utopia.dto.PerfumeDto">
-		select perfume_id, perfume_name, perfume_price, thumbs_ct, brand_name
-		  from t_perfume p, t_brand b, t_perfume_brand pb
-		 where p.perfume_id = pb.perfume_id
-		   and b.brand_id = pb.brand_id
-	
+	<select id="selectBrandList" resultType="utopia.dto.PerfumeDto">
+		select brand_id, brand_name
+		  from t_brand b   
 	</select>
 	
+	<!-- 브랜드의 향수제품 리스트 -->
+	<select id="selectBrandPerfumeList" parameterType="int" resultType="utopia.dto.PerfumeDto">
+		select p.perfume_id, perfume_name, perfume_price, thumbs_ct, brand_name, perfume_img as perfumeImage
+		  from t_perfume p, t_brand b, t_perfume_brand pb
+		 where pb.brand_id = b.brand_id and pb.perfume_id = p.perfume_id
+		   and b.brand_id = #{brandId}   
+      order by thumbs_ct desc
+	</select>
 	
 	
 	</mapper>
