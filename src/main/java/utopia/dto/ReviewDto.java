@@ -8,6 +8,10 @@ public class ReviewDto {
 	private int reviewId;
 	private String reviewTitle;
 	private String reviewContents;
-	private String reviewImage;
+	private String reviewImg;
+	private String usePerfume;
+	private String reviewDt;
+	private String perfumeBrand;
+	private String memberName;
 	
 }

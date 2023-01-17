@@ -1,0 +1,230 @@
+@charset "UTF-8";
+
+body {
+	background-color: #FFF1F1;
+}
+
+.container h2 {
+	box-sizing: border-box;
+ 	width: 80px;
+	border-bottom: solid black 1px;
+	text-align: center;
+	margin-left: 350px;
+	margin-top: 70px;
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+
+
+table.review_detail {
+  margin-top: 20px;
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.review_detail tbody th {
+   width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #FFAEC1;
+    text-align: center;
+    font-size: 12px;
+    vertical-align: middle;
+}
+table.review_detail td {
+    width: 350px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size:12px;
+    padding-left: 20px;
+}
+
+table.review_detail img {
+	width: 100px;
+	height: 100px;
+}
+
+table.write_review {
+    margin-top: 20px;
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.write_review tbody th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #FFAEC1;
+    text-align: center;
+    font-size: 12px;
+    vertical-align: middle;
+}
+table.write_review td {
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
+
+table.update_review {
+  margin-top: 20px;
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.update_review tbody th {
+   width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #FFAEC1;
+    text-align: center;
+    font-size: 12px;
+    vertical-align: middle;
+}
+table.update_review td {
+    width: 350px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size:12px;
+}
+
+.input {
+	width: 100%;
+	font-size: 12px;
+	border:none;
+	height: 30px;
+}
+
+.textarea {
+	width: 100%;
+	font-size: 12px;
+	border:none;
+	height: 400px;
+}
+
+input.btn {
+ 	display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 3px solid #FFAEC1;
+    padding: 8px;
+    width: 85px;
+    font-size: 12px;
+    height: 35px;
+    vertical-align: middle;
+    font-weight: bold;
+    margin-top: 20px;
+    float: right;
+    margin-right: 350px;
+    background-color: #FFF1F1;
+    line-height: 1px;
+}
+
+input.btn:hover {
+    background-color: #FFAEC1;   
+}
+
+.filebox .upload-name {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 85%;
+    color: #999999;
+}
+
+.filebox label {
+    display: inline-block;
+    color: #fff;
+    background-color: #999999;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px;
+    font-size: 12px;
+    vertical-align: middle;
+    width: 10%;
+    text-align: center;
+    line-height: 40px;
+}
+
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}       
+        
+#brand {
+	background-color: white;
+    border: 1px solid #FFAEC1;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1.5em;
+    height: 30px;
+    width: 100%;
+    padding: 0.5em 3.5em 0.5em 1em;
+}      
+
+#brand option{
+	height: 40px;
+}
+
+.container {
+	position: absolute;
+}
+
+.debtn {
+	margin-right: 350px;
+}
+input.subbtn {
+ 	display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 3px solid #FFAEC1;
+    padding: 8px;
+    width: 85px;
+    font-size: 12px;
+    height: 35px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: bold;
+    margin-top: 20px;
+    float: right;
+    
+    background-color: #FFF1F1;
+    line-height: 1px;
+}
+
+input.subbtn:hover {
+    background-color: #FFAEC1;   
+}
+
+td.review_content {
+	height: 300px;
+	vertical-align: middle;
+}

@@ -16,42 +16,51 @@ import utopia.service.LoginService;
 public class LoginController {
 	@Autowired
 	private LoginService loginService;
-	
-	@GetMapping("/utopia/login.do")
+
+	@GetMapping("/login.do")
 	public String login(HttpSession session) throws Exception {
 		if (session.getAttribute("memberEmail") == null) {
 			return "login.html";
-		}else {
-			return "redirect:/utopia/perfume";
-		}
-	}
-	
-	
-	@PostMapping("/utopia/login.do")
-	public String login(LoginDto loginDto, HttpSession session) throws Exception {
-		
-		MemberDto memberDto = loginService.login(loginDto);
-		if(memberDto == null) {
-			session.setAttribute("message", "일치하는 정보가 존재하지 않습니다.");
-			
-			return "redirect:/login.do";
-		}else {
-			session.setAttribute("member", memberDto);
-			return "redirect:/utopia/perfume";
+		} else {
+			return "main.html";
 		}
 	}
 
-	
-	@RequestMapping("/utopia/openSignup.do")
-	public String openSignup() throws Exception{
+	@PostMapping("/login.do")
+	public String login(LoginDto loginDto, HttpSession session) throws Exception {
+
+		MemberDto memberDto = loginService.login(loginDto);
+		if (memberDto == null) {
+			session.setAttribute("message", "일치하는 정보가 존재하지 않습니다.");
+
+			return "redirect:/login.do";
+		} else {
+			session.setAttribute("member", memberDto);
+			return "redirect:/utopia/main";
+		}
+	}
+
+	@GetMapping("/logout.do")
+	public String logout(HttpSession session) throws Exception {
+		session.removeAttribute("member");
+		session.invalidate();
+		return "redirect:/login.do";
+	}
+
+	@RequestMapping("/openSignup.do")
+	public String openSignup() throws Exception {
 		return "signup.html";
 	}
-	
-	@RequestMapping("/utopia/memberInsert.do")
+
+	@RequestMapping("/memberInsert.do")
 	public String memberInsert(MemberDto memberDto) throws Exception {
 		loginService.memberInsert(memberDto);
-		return "redirect:/utopia/login.do";	
+		return "redirect:/login.do";
 	}
-		
-	
+
+	@GetMapping("/utopia/main")
+	public String openMain() throws Exception {
+		return "/main";
+	}
+
 }

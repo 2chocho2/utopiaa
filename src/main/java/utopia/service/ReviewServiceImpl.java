@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import lombok.extern.slf4j.Slf4j;
+import utopia.dto.BrandDto;
+import utopia.dto.MemberDto;
 import utopia.dto.ReviewDto;
 import utopia.mapper.ReviewMapper;
 
@@ -29,12 +31,20 @@ public class ReviewServiceImpl implements ReviewService {
 		return reviewMapper.selectReviewList();
 	}
 	
+	public List<MemberDto> openReviewMember() throws Exception {
+		return reviewMapper.openReviewMember();
+	}
+	
+	public List<BrandDto> openReviewBrand() throws Exception {
+		return reviewMapper.openReviewBrand();
+	}
 	// 리뷰 작성
 	@Override
 	public void insertReview(ReviewDto reviewDto, MultipartFile file) throws Exception{
 		String savedFilePath = saveFile(file);
-		reviewDto.setReviewImage(savedFilePath);
-		reviewMapper.insertReview(reviewDto, file);			
+		reviewDto.setReviewImg(savedFilePath);
+	
+		reviewMapper.insertReview(reviewDto);	
 	}
 
 	
@@ -43,7 +53,6 @@ public class ReviewServiceImpl implements ReviewService {
 	@Override
 	public String saveFile(MultipartFile file) throws Exception {
 		String savedFilePath = uploadPath + file.getOriginalFilename();
-		log.debug(savedFilePath);
 		
 		File uploadFile = new File(savedFilePath);
 		file.transferTo(uploadFile);
@@ -53,23 +62,28 @@ public class ReviewServiceImpl implements ReviewService {
 	
 	// 리뷰 상세 조회
 	@Override
-	public ReviewDto selectReviewDetail(int ReviewId) throws Exception {
-		return reviewMapper.selectReviewDetail(ReviewId);		// 게시판 상세 내용을 조회
+	public ReviewDto selectReviewDetail(int reviewId) throws Exception {
+		return reviewMapper.selectReviewDetail(reviewId);		// 게시판 상세 내용을 조회
 	}
 	
+	@Override
+	public ReviewDto selectReviewByReviewId(int reviewId) throws Exception {
+		return reviewMapper.selectReviewByReviewId(reviewId);
+	}
+
 	// 리뷰 수정
 	@Override
 	public void updateReview(ReviewDto reviewDto) throws Exception {
-		reviewMapper.updateReview(reviewDto);
-
+		reviewMapper.updateReview(reviewDto);	
 	}
-	
+
 	
 	// 리뷰 삭제 
 	@Override
-	public void deleteReview(int ReviewId) throws Exception {
-		reviewMapper.deleteReview(ReviewId);
-
+	public void deleteReview(int reviewId) throws Exception {
+		reviewMapper.deleteReview(reviewId);
 	}
+
+	
 
 }
