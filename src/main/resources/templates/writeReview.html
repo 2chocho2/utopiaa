@@ -13,15 +13,15 @@
 	<!-- 네비게이션 -->
   <div id="header">
     <nav class="menu" >
-       <a id="logo" href="/utopia/main"><img src="/img/utopia_logo.png"></a>
+      <a id="logo" href="/main.do"><img src="/img/logo.png"></a>
       <ul>
-     <li><a href="/utopia/main">홈화면</a></li>
+      <li><a href="/main.do">홈화면</a></li>
         <li><a href="/utopia/perfume">제품목록</a></li>
         <li><a href="/utopia/reviewList.do">대화의창</a></li>
       </ul>
       <div class="login_message">
     	<div th:unless="${#strings.isEmpty(session.member)}" style="text-align:right;">
-			<b>[[${session.member.memberName}]]</b>님 환영합니다~!! **✲ﾟ*(❁´▽`❁)*✲ﾟ** <a href="/logout.do" class="btn">logout</a>
+			<b>[[${session.member.memberName}]]</b>님 환영합니다~!! **✲ﾟ*(❁´▽`❁)*✲ﾟ** <a href="/logout.do" class="btn">로그아웃</a>
       </div>
     </nav>
   </div>

@@ -4,49 +4,55 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="utopia.mapper.PerfumeMapper">
 
-	<!-- 향수제품 리스트 -->
-	<select id="selectPerfumeList" resultType="utopia.dto.PerfumeDto">
-	     select p.perfume_id, perfume_name, perfume_price,thumbs_ct, brand_name, perfume_img as perfumeImage
-        from t_perfume p, t_brand b, t_perfume_brand pb
+   <!-- 향수제품 리스트 -->
+   <select id="selectPerfumeList" resultType="utopia.dto.PerfumeDto">
+        select p.perfume_id, perfume_name, perfume_price,thumbs_ct, brand_name, perfume_img as perfumeImage, category_name
+        from t_perfume p, t_brand b, t_perfume_brand pb, t_perfume_category pc, t_category c
         where p.perfume_id = pb.perfume_id
-        and b.brand_id = pb.brand_id
-       	order by thumbs_ct desc
-       	limit 30
-	</select>
-			
-<!--	추천수-->
-	<update id="updateThumbsCount" parameterType="int">
-		update t_perfume 
-		   set thumbs_ct = thumbs_ct + 1
-		 where perfume_id = #{perfumeId}
-	</update>
-	
-	<!--브랜드 정보 조회   -->
-<!-- 	<select id="selectBrandList" resultType="utopia.dto.PerfumeDto">
-		select brand_id, brand_name 
-		  from t_brand
-	</select> -->
-	
-<select id="selectBrand" parameterType="int" resultType="utopia.dto.PerfumeDto">
-		select brand_name 
-		  from t_perfume_brand pb, t_brand b
-		 where pb.brand_id = #{brandId}
-		   and pb.brand_id = b.brand_id 
-	</select>
-	
-	<select id="selectBrandList" resultType="utopia.dto.PerfumeDto">
-		select brand_id, brand_name
-		  from t_brand b   
-	</select>
-	
-	<!-- 브랜드의 향수제품 리스트 -->
-	<select id="selectBrandPerfumeList" parameterType="int" resultType="utopia.dto.PerfumeDto">
-		select p.perfume_id, perfume_name, perfume_price, thumbs_ct, brand_name, perfume_img as perfumeImage
-		  from t_perfume p, t_brand b, t_perfume_brand pb
-		 where pb.brand_id = b.brand_id and pb.perfume_id = p.perfume_id
-		   and b.brand_id = #{brandId}   
-      order by thumbs_ct desc
-	</select>
-	
-	
-	</mapper>
+         and b.brand_id = pb.brand_id
+           and p.perfume_id = pc.perfume_id
+         and pc.category_id = c.category_id 
+          order by thumbs_ct desc
+       limit #{offset}, 30
+   </select>
+
+   <!--   페이징-->
+   <select id="selectPerfumeListCount" resultType="int">
+      select count(*)
+        from t_perfume
+      
+   </select> 
+         
+   <!--   추천수-->
+   <update id="updateThumbsCount" parameterType="int">
+      update t_perfume 
+         set thumbs_ct = thumbs_ct + 1
+       where perfume_id = #{perfumeId}
+   </update>
+   
+   <select id="selectBrand" parameterType="int" resultType="utopia.dto.PerfumeDto">
+      select brand_name 
+        from t_perfume_brand pb, t_brand b
+       where pb.brand_id = #{brandId}
+         and pb.brand_id = b.brand_id 
+   </select>
+   
+   <select id="selectBrandList" resultType="utopia.dto.PerfumeDto">
+      select brand_id, brand_name
+        from t_brand b   
+   </select>
+   
+   <!-- 브랜드의 향수제품 리스트 -->
+   <select id="selectBrandPerfumeList" parameterType="int" resultType="utopia.dto.PerfumeDto">
+      select p.perfume_id, perfume_name, perfume_price, thumbs_ct, brand_name, perfume_img as perfumeImage, category_name
+        from t_perfume p, t_brand b, t_perfume_brand pb, t_perfume_category pc, t_category c
+       where p.perfume_id = pb.perfume_id
+         and p.perfume_id = pc.perfume_id
+         and pb.perfume_id = pc.perfume_id
+         and b.brand_id = #{brandId}
+         and pb.brand_id = #{brandId}
+         and c.category_id = pc.category_id
+   </select>
+
+   
+</mapper>

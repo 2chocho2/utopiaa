@@ -10,11 +10,12 @@ import utopia.dto.PerfumeDto;
 
 @Mapper
 public interface PerfumeMapper {
-	List<PerfumeDto> selectPerfumeList() throws Exception;
-	List<BrandDto> selectBrandList() throws Exception;
-	List<BrandDto> selectBrand(int brandId) throws Exception;
-	List<PerfumeDto> selectBrandPerfumeList(int brandId) throws Exception;
-	
-	public void updateThumbsCount(int perfumeId) throws Exception;
+   int selectPerfumeListCount() throws Exception;
+   List<PerfumeDto> selectPerfumeList(int offset) throws Exception;
+   List<BrandDto> selectBrandList() throws Exception;
+   List<BrandDto> selectBrand(int brandId) throws Exception;
+   List<PerfumeDto> selectBrandPerfumeList(int brandId) throws Exception;   
+   public void updateThumbsCount(int perfumeId) throws Exception;
+   List<String> selectCategoryByPerfumeId(int perfumeId) throws Exception;
 
 }

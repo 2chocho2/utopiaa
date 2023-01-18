@@ -36,7 +36,7 @@ public class LoginController {
 			return "redirect:/login.do";
 		} else {
 			session.setAttribute("member", memberDto);
-			return "redirect:/utopia/main";
+			return "redirect:/main.do";
 		}
 	}
 
@@ -58,7 +58,7 @@ public class LoginController {
 		return "redirect:/login.do";
 	}
 
-	@GetMapping("/utopia/main")
+	@GetMapping("/main.do")
 	public String openMain() throws Exception {
 		return "/main";
 	}
