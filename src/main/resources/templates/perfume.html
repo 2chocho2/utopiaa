@@ -54,7 +54,7 @@
          <li> [[${perfume.perfumeName}]]<br><br>
         [[${perfume.perfumePrice}]]<br><br>
           [[${perfume.brandName}]]
-         <br></br>         
+         
          <img src="" th:attrappend="src=${perfume.perfumeImage}">  </img>
          </li>
          
@@ -73,12 +73,9 @@
   <div>
           <div class=number>
             <ul class="123">
-               <li><a href="/utopia/perfume?currentPage=1">1</a></li>
-                <li><a href="/utopia/perfume?currentPage=2">2</a></li>
-                <li><a href="/utopia/perfume?currentPage=3">3</a></li>
-                <li><a href="/utopia/perfume?currentPage=4">4</a></li>
-                <li><a href="/utopia/perfume?currentPage=5">5</a></li>
-            
+			<li th:each="i : ${#numbers.sequence(1, pageCount, 1)}">
+				<a href="/utopia/perfume?currentPage=" th:attrappend="href=${i}">[[${i}]]</a>
+			</li>
              <ul>
          </div>
 </div>

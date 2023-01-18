@@ -1,5 +1,20 @@
 @charset "UTF-8";
-html {scroll-behavior: smooth;}
+
+
+@font-face {
+    font-family: 'GowunBatang-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.html {scroll-behavior: smooth;}
   @media (max-width: 900px) {
     .menu { width: 800px; }
   }
@@ -7,6 +22,7 @@ html {scroll-behavior: smooth;}
 * {
    padding: 0;
    margin: 0;
+   
 }
 
 
@@ -16,7 +32,7 @@ html {scroll-behavior: smooth;}
 }
 #header {
     width: 100;
-    height: 20%;
+    height: 10%;
     position: fixed;
     width: 100%;
     z-index: 1;
@@ -24,10 +40,10 @@ html {scroll-behavior: smooth;}
 
 
 
-  .top {
+  .top {  font-family: 'GowunBatang-Regular';
     height: 50px;
     line-height: 50px;
-    font-size: 14px;
+    font-size: 16px;
     padding-left: 100px;
     padding-right: 100px;
     background-color: white;
@@ -78,11 +94,12 @@ html {scroll-behavior: smooth;}
 .box1{
   margin-left: 80px;
   padding-top: 220px;
-  width:200px;
+  width:300px;
   background-color:#fff1f1;
   position:fixed;
   height:1000px;
   float:none;
+/*   border-right: 2px solid white; */
   
 }
 .menu {
@@ -96,6 +113,9 @@ html {scroll-behavior: smooth;}
   background-color: #fff1f1;
   list-style:none;
   width:210px;
+   border-bottom: 3px solid white;
+    border-top: 3px solid white;
+     font-family: 'NanumSquareNeo-Variable';
   
 }
 .brand a { 
@@ -108,23 +128,37 @@ html {scroll-behavior: smooth;}
 color:#c7e4ff;
   background-color: #fff1f1;
   text-decoration-line: none;
+   border-bottom: 3px solid white;
+    border-top: 3px solid white;
+     font-family: 'NanumSquareNeo-Variable';
+ 
    }
   
 .brand a:hover { background-color:aliceblue;
-color: black;}
-.menu:hover { background-color:aliceblue;}
+color: black;
+
+border-color:rgba(224, 175, 255, 0.2);
+
+}
+
+.menu:hover { background-color:aliceblue;
+
+border-color:rgba(224, 175, 255, 0.2);
+}
 
 .box2 {
-  padding:100px 70px 70px 370px;
+  padding:100px 70px 70px 420px;
     background-color:#fff1f1;
   float:none;
   font-size: 21px;
   width:auto;
-  height:5000px;
+  height:auto;
   margin-left:0px;
   text-decoration: underline;
+  text-decoration-color: white;
   text-underline-offset: 16px;
    position:static;
+    font-family: 'NanumSquareNeo-Variable';
 }
 .box2 p {
    width:500px;
@@ -136,14 +170,14 @@ color: black;}
  float: left;
   padding: 30px;
 position:relative;
-  top:4950px;
+  top:6300px;
   left: 575px;
   font-size: 15px;
 }
 .box3 {
  
   margin: 0;
-  padding: 10px 0 0 0;
+  padding: 10xp 0 0 0;
    text-decoration: none;
     text-decoration-line:none;
       text-align: center;
@@ -162,7 +196,7 @@ width: auto;
 .box3 ul {
    box-sizing: default;
    margin: 10px;
-   padding: 10px;
+
    list-style: none;
    width: 300px;
    height: 300px;
@@ -174,10 +208,6 @@ width: auto;
    text-decoration: none
    
 }
-.box3 li:hover {
-   text-decoration:underline;
-}
-
 
 .box3:after {
    content: "";
@@ -199,16 +229,18 @@ width: auto;
    
 }
 .box3 ul {float:left; 
-padding:20px;   
-height: 360px; 
+padding:15px;   
+height: 345px; 
 background-color:white; 
-opacity: 95%; 
-width: 290px;
+opacity: 100%; 
+width: 270px;
 border-style: solid;
-border-color: #d3d3d3;
-border-width: 1px;
-font-size: 17px;
-padding: 30px;
+border-color:rgba(224, 175, 255, 0.2);
+border-width: 2px;
+font-size: 18px;
+padding: 22px;
+margin: 25px;
+  font-family: 'GowunBatang-Regular';
 }
 
 
@@ -216,9 +248,13 @@ padding: 30px;
 
 /* 태그정보 */
 .box3 ul:hover > li:first-child {display: none;}
-.box3 ul:hover > figcaption {  transition: 0.3s; color:pink; display: flex; padding: 2.0rem 0 2rem 5.5rem; font-size: 26px; font-weight: 400;}
-
+.box3 ul:hover > figcaption {     animation: fadein 1.5s;  color:pink; display: flex; padding: 0.5rem 0 0.5rem 5.7rem; font-size: 26px; font-weight: 400;}
+ @keyframes fadein {
+    from { opacity: 0; }
+    to {  opacity: 1; }
+  }
 .box3 ul {overflow:hidden;}
+
 
 .box3 .product .item {
    width:270px;
@@ -226,3 +262,18 @@ padding: 30px;
    display:block;
 }
 .box3 .product .item:hover   {display: none;}
+
+body {
+     margin: 0px;
+
+  background-image: url("/img/2.png")
+}
+
+.backimg { 
+     position: absolute;
+  left: 10%;
+  transform: translateX(-5.85%);
+  border: 3px solid #f4dbf1
+       
+   
+}

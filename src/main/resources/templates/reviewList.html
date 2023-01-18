@@ -26,23 +26,23 @@
   </div>
   
    <div class="container">
-      <h2>대화의 창</h2>
-   <div class="eachReview" th:if="${#lists.size(reviewList)} > 0" th:each="review : ${reviewList}">
+   <h2>대화의 창</h2>
+   <div style="cursor: pointer;" class="eachReview" th:if="${#lists.size(reviewList)} > 0" th:each="review : ${reviewList}" th:onclick="|location.href='@{/utopia/openReviewDetail.do(reviewId=${review.reviewId})}'|">
       <tr>
        <img src="/utopia/download.do?reviewId=" th:attrappend="src=${review.reviewId}"/> 
-          <p style="margin-bottom: 10px;"><a href="/utopia/openReviewDetail.do?reviewId=" 
-                  th:attrappend="href=${review.reviewId}"
-                  th:text="${review.reviewTitle}"></a>
+
+         <!-- 제목 -->
+             <p style="margin-bottom: 10px;" class="title" th:text="${review.reviewTitle}"></p>
         
+
             <p><!-- 작성자 -->
-            <td class="writer" th:text="${session.member.memberName}"></td>            
+            <td class="writer" th:text="${review.memberName}"></td>            
             <p><!-- 브랜드명/향수이름 -->
             <td class="perfume">
             	[[${review.perfumeBrand}]] / [[${review.usePerfume}]]
             </td>
             
           </tr>
-    
       <tr th:unless="${#lists.size(reviewList)} > 0">
                <td colspan="6">조회된 결과가 없습니다.</td>
             </tr>

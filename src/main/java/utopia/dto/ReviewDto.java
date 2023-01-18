@@ -13,5 +13,6 @@ public class ReviewDto {
 	private String reviewDt;
 	private String perfumeBrand;
 	private String memberName;
+
 	
 }

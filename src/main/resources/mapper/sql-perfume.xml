@@ -52,6 +52,7 @@
          and b.brand_id = #{brandId}
          and pb.brand_id = #{brandId}
          and c.category_id = pc.category_id
+     order by thumbs_ct desc
    </select>
 
    
