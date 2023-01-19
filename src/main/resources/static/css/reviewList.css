@@ -83,7 +83,10 @@
 
 body {
    background-image:url('/img/review_bg.png');
+   background-repeat : no-repeat;
+   background-size: cover;
     margin: auto;
+    height: 100vh;
 }
 
 .container {
@@ -100,12 +103,13 @@ body {
     width: 120px;
     border-bottom: solid black 1px;
     text-align: center;
-    margin-left: 47%;
+    margin-left: 50%;
     margin-top: 110px;
     padding-bottom: 7px;   
 }
 
 .eachReview {
+   /*
    width: 15%;
    float: left;
    margin-top: 50px;
@@ -116,7 +120,19 @@ body {
    transform: translate(20%, 0%);
    font-size: 12px;
    font-family: 'NanumSquareNeo-Variable';
-   line-height: 20px; }
+   line-height: 20px;
+   */ 
+   box-sizing: border-box;
+   width: 25%;
+   float: left;
+   margin-top: 50px;
+   margin-bottom: 50px;
+   padding: 10px;
+   transform: translate(20%, 0%);
+   font-size: 12px;
+   font-family: 'NanumSquareNeo-Variable';
+   line-height: 20px;
+  }
 
 .eachReview .title {
    font-size: 14px;
@@ -132,13 +148,6 @@ body {
    text-decoration: none;
    color: black;
 }
-.eachReview tr {
-   width: 20%;
-   float: left;
-   margin-right: 10px;
-   padding: 10px;   
-   
-}
 
 .eachReview tr::after {
    content: "";
@@ -152,7 +161,10 @@ body {
 }
 
 .eachReview img {
+   /*
    width: 230px;
+   */
+   width: 100%;
    height: 170px;
 }
 
@@ -163,15 +175,33 @@ body {
      height: 10px;
 }
 
- .paginate {
-   clear: both;
-   text-align: center;
+.paginate {
+   width: auto;
+   padding-top: 25px;
+   float: left;
+   }
+.paginate ul {
+   margin-left: 50%;
+   padding: 0;
+   list-style: none;
+}
+.paginate ul li {
+   float: left;
+   width: auto;
+}
+.paginate ul li a {
+   margin-right: 5px;
+   padding: 3px 15px;
+   font-family: 'NanumSquareNeo-Variable';
+    font-size: 12px;
+    text-decoration: none;
  }
-
- .paginate a {
-   width: 50px;
-   display: inline-block;
- }
+.paginate ul li a:hover {
+   background-color: #FFAEC1; 
+}
+.paginate ul:after {
+   content: ""; display: block; clear: both; 
+}
 
 
 input.subbtn {
@@ -189,9 +219,7 @@ input.subbtn {
     float: right;
     background-color: #FFF1F1;
     line-height: 1px;
-    margin-right: 100px;
-    margin-bottom: 30px;
-    font-family: 'NanumSquareNeo-Variable';   
+    font-family: 'NanumS quareNeo-Variable';   
 }
 
 input.subbtn:hover {

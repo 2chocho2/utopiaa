@@ -1,5 +1,7 @@
 package utopia.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,9 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import utopia.dto.LoginDto;
 import utopia.dto.MemberDto;
+import utopia.dto.PerfumeDto;
 import utopia.service.LoginService;
 
 @Controller
@@ -59,8 +63,12 @@ public class LoginController {
 	}
 
 	@GetMapping("/main.do")
-	public String openMain() throws Exception {
-		return "/main";
+	public ModelAndView openMain() throws Exception {
+		ModelAndView mv = new ModelAndView("/main");
+		List<PerfumeDto> bestList = loginService.selectPerfumeBest();
+		mv.addObject("bestList", bestList);
+		return mv;
 	}
+
 
 }

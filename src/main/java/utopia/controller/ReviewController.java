@@ -28,24 +28,30 @@ public class ReviewController {
 	@Autowired
 	private ReviewService reviewService;
 	
-	// 리뷰 목록 조회
-	@GetMapping("/utopia/reviewList.do")
-	public ModelAndView openReviewList() throws Exception {
-		ModelAndView mv = new ModelAndView("/reviewList");
-		
-		List<ReviewDto> reviewList = reviewService.selectReviewList();
-		mv.addObject("reviewList", reviewList);
-		
-		List<MemberDto> reviewMember = reviewService.openReviewMember();
-		mv.addObject("reviewMember", reviewMember);
-		
-		List<BrandDto> reviewBrand = reviewService.openReviewBrand();
-		mv.addObject("reviewBrand", reviewBrand);
-		
-		
-		log.debug("졸려요 ");
-		return mv;
-	}
+	   // 리뷰 목록 조회 & 페이징
+	   @GetMapping("/utopia/reviewList.do")
+	   public ModelAndView openReviewList(
+	         @RequestParam(value="currentPage", required=false, defaultValue="1") int currentPage) throws Exception {
+	      ModelAndView mv = new ModelAndView("/reviewList");
+	      
+	      
+	      List<MemberDto> reviewMember = reviewService.openReviewMember();
+	      mv.addObject("reviewMember", reviewMember);
+	      
+	      List<BrandDto> reviewBrand = reviewService.openReviewBrand();
+	      mv.addObject("reviewBrand", reviewBrand);
+	      
+	      List<ReviewDto> reviewList = reviewService.selectReviewListPage((currentPage - 1) * 8);
+	      mv.addObject("reviewList", reviewList);
+	      
+	   // 페이징 정보 출력에 사용되는 변수
+	      mv.addObject("pageCount", Math.ceil(reviewService.selectReviewListCount() / 8.0));
+	      mv.addObject("currentPage", currentPage);
+	      
+	      log.debug("졸려요 ");
+	      
+	      return mv;
+	   }
 	
 	// 리뷰 작성화면
 	@GetMapping("/utopia/writeReview.do")

@@ -1,18 +1,57 @@
 @charset "UTF-8";
 
-body {
-	background-color: #FFF1F1;
+@font-face {
+    font-family: 'GowunBatang-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
+.menu {
+    font-family: 'NanumSquareNeo-Variable';
+}
+.backimg {
+ position: absolute;
+   display:block;
+margin:0 auto; 
+  border-left: 3px solid #f4dbf1;
+ border-right: 3px solid #f4dbf1;
+}
+
+body {
+     margin: 0px;
+
+  background-image: url("/img/review_bg.png")
+}
+
+.container { 
+
+  transform: translateX(10.85%);
+    font-family: 'NanumSquareNeo-Variable';
+    background-color:#fff1f1;
+    position: absolute;
+    height: 900px;
+    width: 1464px;
+      border-left: 3px solid #f4dbf1;
+ border-right: 3px solid #f4dbf1;
+}
 .container h2 {
-	box-sizing: border-box;
- 	width: 80px;
-	border-bottom: solid black 1px;
-	text-align: center;
-	margin-left: 350px;
-	margin-top: 70px;
-	font-weight: bold;
-	padding-bottom: 5px;
+   box-sizing: border-box;
+    width: 100px;
+   border-bottom: solid white 3px;
+   text-align: center;
+   margin-left: 290px;
+   margin-top: 70px;
+   font-size: 20px;
+   font-weight: bold;
+   padding-bottom: 15px;
+   
 }
 
 
@@ -46,8 +85,8 @@ table.review_detail td {
 }
 
 table.review_detail img {
-	width: 100px;
-	height: 100px;
+   width: 100px;
+   height: 100px;
 }
 
 table.write_review {
@@ -61,21 +100,26 @@ table.write_review {
 }
 
 table.write_review tbody th {
+   
     width: 150px;
-    padding: 10px;
+    padding: 5px;
     font-weight: bold;
     vertical-align: top;
     border-bottom: 1px solid #ccc;
     background: #FFAEC1;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     vertical-align: middle;
+    border-radius: .2rem;
+    border-style: solid;
+    border-width: 3px;
+border-color:rgba(224, 175, 255, 0.2);
 }
 table.write_review td {
     width: 350px;
     padding: 10px;
     vertical-align: top;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #f0defb;
 }
 
 
@@ -108,34 +152,37 @@ table.update_review td {
 }
 
 .input {
-	width: 100%;
-	font-size: 12px;
-	border:none;
-	height: 30px;
+    font-family: 'NanumSquareNeo-Variable';
+   width: 100%;
+   font-size: 13px;
+   border:none;
+   height: 30px;
 }
 
 .textarea {
-	width: 100%;
-	font-size: 12px;
-	border:none;
-	height: 400px;
+   font-family: 'NanumSquareNeo-Variable';
+   width: 100%;
+   font-size: 14px;
+   border:none;
+   height: 400px;
 }
 
 input.btn {
- 	display: inline-block;
+   font-family: 'NanumSquareNeo-Variable';
+    display: inline-block;
     outline: 0;
     cursor: pointer;
     border-radius: 6px;
     border: 3px solid #FFAEC1;
     padding: 8px;
     width: 85px;
-    font-size: 12px;
+    font-size: 14px;
     height: 35px;
     vertical-align: middle;
     font-weight: bold;
     margin-top: 20px;
     float: right;
-    margin-right: 350px;
+    margin-right: 300px;
     background-color: #FFF1F1;
     line-height: 1px;
 }
@@ -157,11 +204,11 @@ input.btn:hover {
 .filebox label {
     display: inline-block;
     color: #fff;
-    background-color: #999999;
+    background-color: #eacbf1;
     cursor: pointer;
     height: 40px;
     margin-left: 10px;
-    font-size: 12px;
+    font-size: 15px;
     vertical-align: middle;
     width: 10%;
     text-align: center;
@@ -177,12 +224,12 @@ input.btn:hover {
     border: 0;
 }       
         
-#brand {
-	background-color: white;
+#brand { font-family: 'NanumSquareNeo-Variable';
+   background-color: white;
     border: 1px solid #FFAEC1;
     border-radius: 3px;
     display: inline-block;
-    font-size: 12px;
+    font-size: 13.5px;
     line-height: 1.5em;
     height: 30px;
     width: 100%;
@@ -190,18 +237,16 @@ input.btn:hover {
 }      
 
 #brand option{
-	height: 40px;
+   height: 40px;
 }
 
-.container {
-	position: absolute;
-}
+
 
 .debtn {
-	margin-right: 350px;
+   margin-right: 350px;
 }
 input.subbtn {
- 	display: inline-block;
+    display: inline-block;
     outline: 0;
     cursor: pointer;
     border-radius: 6px;
@@ -225,6 +270,6 @@ input.subbtn:hover {
 }
 
 td.review_content {
-	height: 300px;
-	vertical-align: middle;
+   height: 300px;
+   vertical-align: middle;
 }

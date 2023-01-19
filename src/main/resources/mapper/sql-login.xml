@@ -15,4 +15,17 @@
 		insert into t_member (member_email, member_pw, member_name )
 		values ( #{memberEmail}, #{memberPw}, #{memberName});
 	</insert> 
+	
+	<!-- 메인페이지 베스트 셀러 -->
+	
+	<select id="selectPerfumeBest" resultType="utopia.dto.PerfumeDto">
+        select p.perfume_id, perfume_name, perfume_price,thumbs_ct, brand_name, perfume_img as perfumeImage, category_name
+        from t_perfume p, t_brand b, t_perfume_brand pb, t_perfume_category pc, t_category c
+        where p.perfume_id = pb.perfume_id
+         and b.brand_id = pb.brand_id
+           and p.perfume_id = pc.perfume_id
+         and pc.category_id = c.category_id 
+          order by thumbs_ct desc
+       limit 3
+	</select>
 </mapper>
