@@ -1,30 +1,136 @@
 @charset "UTF-8";
 
 @font-face {
-    font-family: 'GowunBatang-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'NanumSquareNeo-Variable';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+   font-family: 'YUniverse-B';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+   font-weight: normal;
+   font-style: normal;
 }
 
-.menu {
-    font-family: 'NanumSquareNeo-Variable';
+@font-face {
+   font-family: 'GowunBatang-Regular';
+   src:
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
 }
+
+@font-face {
+   font-family: 'NanumSquareNeo-Variable';
+   src:
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2')
+      format('woff2');
+   font-weight: normal;
+   font-style: normal;
+}
+
+
+@font-face {
+   font-family: 'ChosunGu';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+   /* 반응형 */
+  @media (max-width: 900px) {
+    .menu { width: 800px; }
+  }
+  
+#header {
+   position: fixed;
+   width: 100%;
+   z-index: 1;
+}
+
+.top {
+   overflow:hidden;
+   height: 60px;
+   line-height: 60px;
+   font-size: 14px;
+   padding-left: 100px;
+   padding-right: 100px;
+  background-color: rgb(255, 255, 255, 0.9); 
+}
+
+/* 네비게이션 로고 */
+.top a {
+   float: left;
+}
+
+.top a img {
+   height: 35px;
+      margin-right:5px;
+      vertical-align: middle;
+}
+
+.top::after {
+   content: "";
+   display: block;
+   clear: both;
+}
+
+/* 네비게이션 메뉴 */
+.top li a {
+   font-family: 'YUniverse-B';
+   text-decoration: none;
+   color: black;
+   margin-left: 20px;
+   font-size:16px;
+   color: #6F6D70;
+   padding: 0px 15px;
+}
+
+.top li a:hover {
+   color: #6F6D70;
+      background-color: rgba(224, 175, 255, 0.2);
+}
+
+/* 네비게이션 로그인 */
+.top .login_message a {
+   color: white;
+      margin-right: 15px;
+}
+
+.top .login_message a {
+   float: right;
+   text-decoration: none;
+   color: black;
+   background-color: rgba(224, 175, 255, 0.2);
+   padding: 0px 30px;
+   font-family: 'NanumSquareNeo-Variable';
+   margin-left:20px;
+   font-size: 14px;
+   color: white;
+}
+
+.top .login_message p {
+   font-family: 'NanumSquareNeo-Variable';
+   float: right;
+   font-size: 14px;
+   color: #D8C1FD;
+}
+
+ .top .login_message b {
+   font-family: 'NanumSquareNeo-Variable';
+   font-weight: 900;
+   font-size: 16px;
+   color: purple;
+   color: #6F6D70;
+   letter-spacing: 2px;
+}
+
 .backimg {
  position: absolute;
    display:block;
 margin:0 auto; 
-  border-left: 3px solid #f4dbf1;
- border-right: 3px solid #f4dbf1;
+
 }
 
 body {
+        background-attachment:fixed;
+  background-repeat : no-repeat;
+  background-size: cover;
      margin: 0px;
 
   background-image: url("/img/review_bg.png")
@@ -34,19 +140,19 @@ body {
 
   transform: translateX(10.85%);
     font-family: 'NanumSquareNeo-Variable';
-    background-color:#fff1f1;
+     background-color: rgb(255, 241, 241, 0.5);
     position: absolute;
-    height: 900px;
-    width: 1464px;
-      border-left: 3px solid #f4dbf1;
- border-right: 3px solid #f4dbf1;
+    padding-top:70px;
+    height: 880px;
+    width: 1500px;
+
 }
 .container h2 {
    box-sizing: border-box;
-    width: 100px;
-   border-bottom: solid white 3px;
+    width: 88px;
+   border-bottom: solid white 2px;
    text-align: center;
-   margin-left: 290px;
+   margin-left: 302px;
    margin-top: 70px;
    font-size: 20px;
    font-weight: bold;
@@ -66,22 +172,29 @@ table.review_detail {
 }
 
 table.review_detail tbody th {
+       font-family: 'NanumSquareNeo-Variable';
    width: 150px;
     padding: 10px;
-    font-weight: bold;
+  /*   font-weight: bold; */
     vertical-align: top;
-    border-bottom: 1px solid #ccc;
-    background: #FFAEC1;
+    border-bottom: 1px solid white;
+    background: rgb(255, 174, 193, 0.7);
     text-align: center;
-    font-size: 12px;
+    font-size: 15px;
     vertical-align: middle;
+      border-radius: .2rem;
+    border-style: solid;
+    border-width: 3px;
+border-color:rgba(224, 175, 255, 0.2);
 }
 table.review_detail td {
     width: 350px;
     padding: 10px;
-    border-bottom: 1px solid #ccc;
-    font-size:12px;
+    border-bottom: 1px solid white;
+    font-size:14px;
     padding-left: 20px;
+    background-color: rgb(255 255 255 / 40%);
+        border-radius: 0.3rem;
 }
 
 table.review_detail img {
@@ -101,16 +214,17 @@ table.write_review {
 
 table.write_review tbody th {
    
+   
     width: 150px;
     padding: 5px;
-    font-weight: bold;
+/*     font-weight: bold; */
     vertical-align: top;
     border-bottom: 1px solid #ccc;
-    background: #FFAEC1;
+       background: rgb(255, 174, 193, 0.7);
     text-align: center;
-    font-size: 14px;
+    font-size: 15px;
     vertical-align: middle;
-    border-radius: .2rem;
+   border-radius: .2rem;
     border-style: solid;
     border-width: 3px;
 border-color:rgba(224, 175, 255, 0.2);
@@ -139,7 +253,7 @@ table.update_review tbody th {
     font-weight: bold;
     vertical-align: top;
     border-bottom: 1px solid #ccc;
-    background: #FFAEC1;
+  background: rgb(255, 174, 193, 0.7);
     text-align: center;
     font-size: 12px;
     vertical-align: middle;
@@ -151,12 +265,15 @@ table.update_review td {
     font-size:12px;
 }
 
+
 .input {
     font-family: 'NanumSquareNeo-Variable';
    width: 100%;
    font-size: 13px;
    border:none;
    height: 30px;
+   border-radius: .3rem;
+   outline-color:#ffaec1b3;
 }
 
 .textarea {
@@ -165,33 +282,38 @@ table.update_review td {
    font-size: 14px;
    border:none;
    height: 400px;
+   border-radius: .3rem;
+   outline-color:#ffaec1b3;
 }
 
 input.btn {
    font-family: 'NanumSquareNeo-Variable';
     display: inline-block;
-    outline: 0;
+    outline: 0 ;
+   
     cursor: pointer;
     border-radius: 6px;
     border: 3px solid #FFAEC1;
     padding: 8px;
-    width: 85px;
+    width: 80px;
     font-size: 14px;
-    height: 35px;
+    height: 40px;
     vertical-align: middle;
     font-weight: bold;
     margin-top: 20px;
     float: right;
-    margin-right: 300px;
+    margin-right: 308px;
     background-color: #FFF1F1;
     line-height: 1px;
 }
 
 input.btn:hover {
+   animation: fadein 1s;
     background-color: #FFAEC1;   
 }
 
 .filebox .upload-name {
+   outline-color:#ffaec1b3;
     display: inline-block;
     height: 40px;
     padding: 0 10px;
@@ -199,20 +321,30 @@ input.btn:hover {
     border: 1px solid #dddddd;
     width: 85%;
     color: #999999;
+    border-radius: .3rem;
 }
 
 .filebox label {
+   border-radius: .3rem;
     display: inline-block;
     color: #fff;
     background-color: #eacbf1;
     cursor: pointer;
     height: 40px;
-    margin-left: 10px;
+    margin-left: 13px;
     font-size: 15px;
     vertical-align: middle;
     width: 10%;
     text-align: center;
     line-height: 40px;
+}
+ @keyframes fadein {
+    from { opacity: 0.6; }
+    to {  opacity: 1; }
+  }
+.filebox label:hover {
+   animation: fadein 0.5s;
+   background-color: #ffaec1;
 }
 
 .filebox input[type="file"] {
@@ -252,21 +384,24 @@ input.subbtn {
     border-radius: 6px;
     border: 3px solid #FFAEC1;
     padding: 8px;
-    width: 85px;
-    font-size: 12px;
-    height: 35px;
+    width: 80px;
+    font-size: 14px;
+    height: 40px;
     margin-left: 10px;
     vertical-align: middle;
     font-weight: bold;
     margin-top: 20px;
-    float: right;
-    
+    float: right;  
     background-color: #FFF1F1;
     line-height: 1px;
+    
 }
 
 input.subbtn:hover {
+   
+   animation: fadein 1s;
     background-color: #FFAEC1;   
+ 
 }
 
 td.review_content {

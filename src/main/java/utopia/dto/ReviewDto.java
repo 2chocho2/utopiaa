@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class ReviewDto {
-
 	private int reviewId;
 	private String reviewTitle;
 	private String reviewContents;
@@ -13,6 +12,4 @@ public class ReviewDto {
 	private String reviewDt;
 	private String perfumeBrand;
 	private String memberName;
-
-	
 }

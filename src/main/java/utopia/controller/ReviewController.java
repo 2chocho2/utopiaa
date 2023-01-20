@@ -34,7 +34,6 @@ public class ReviewController {
 	         @RequestParam(value="currentPage", required=false, defaultValue="1") int currentPage) throws Exception {
 	      ModelAndView mv = new ModelAndView("/reviewList");
 	      
-	      
 	      List<MemberDto> reviewMember = reviewService.openReviewMember();
 	      mv.addObject("reviewMember", reviewMember);
 	      
@@ -44,11 +43,9 @@ public class ReviewController {
 	      List<ReviewDto> reviewList = reviewService.selectReviewListPage((currentPage - 1) * 8);
 	      mv.addObject("reviewList", reviewList);
 	      
-	   // 페이징 정보 출력에 사용되는 변수
+	      // 페이징 정보 출력에 사용되는 변수
 	      mv.addObject("pageCount", Math.ceil(reviewService.selectReviewListCount() / 8.0));
 	      mv.addObject("currentPage", currentPage);
-	      
-	      log.debug("졸려요 ");
 	      
 	      return mv;
 	   }
@@ -59,8 +56,7 @@ public class ReviewController {
 		return "/writeReview";
 	}
 	
-	// 리뷰 작성 제출 - DB 저장
-	// 리뷰 사진 - DB 저장
+	// 리뷰 작성 제출(이미지 파일과 나머지 정보 Dto에 추가) - DB 저장
 	@PostMapping("/utopia/insertReview.do")
 	public String insertReview(@RequestParam("file") MultipartFile file, ReviewDto reviewDto) throws Exception {
 		reviewService.insertReview(reviewDto, file);

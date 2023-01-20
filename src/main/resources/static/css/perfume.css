@@ -1,296 +1,467 @@
 @charset "UTF-8";
 
 @font-face {
-	font-family: 'GowunBatang-Regular';
-	src:
-		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff')
-		format('woff');
-	font-weight: normal;
-	font-style: normal;
+   font-family: 'YUniverse-B';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+   font-weight: normal;
+   font-style: normal;
 }
 
 @font-face {
-	font-family: 'NanumSquareNeo-Variable';
-	src:
-		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2')
-		format('woff2');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'Arita-buri-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+   font-family: 'GowunBatang-Regular';
+   src:
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'NanumSquareNeo-Variable';
+   src:
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2')
+      format('woff2');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'ChosunGu';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
 }
 
 .html {
-	scroll-behavior: smooth;
+   scroll-behavior: smooth;
 }
 
 @media ( max-width : 900px) {
-	.menu {
-		width: 800px;
-	}
+   .menu {
+      width: 800px;
+   }
 }
 
+@keyframes fadein {
+    from { opacity: 0; }
+    to {  opacity: 1; }
+  }
+  
 * {
-	padding: 0;
-	margin: 0;
+   padding: 0;
+   margin: 0;
 }
 
 #wrapper {
-	margin: 0 auto;
-	width: 922px;
+   margin: 0 auto;
+   width: 922px;
 }
 
 #header {
-	width: 100;
-	height: 10%;
-	position: fixed;
-	width: 100%;
-	z-index: 1;
+   position: fixed;
+   width: 100%;
+   z-index: 1;
 }
 
 .top {
-	font-family: 'NanumSquareNeo-Variable';
-	height: 50px;
-	line-height: 50px;
-	font-size: 14px;
-	padding-left: 100px;
-	padding-right: 100px;
-	background-color: white;
+   height: 60px;
+   line-height: 60px;
+   font-size: 14px;
+   padding-left: 100px;
+   padding-right: 100px;
+   background-color: rgb(255, 255, 255);  
 }
 
 /* 네비게이션 로고 */
 .top a {
-	float: left;
+   float: left;
 }
 
 .top a img {
-	height: 35px;
-	vertical-align: middle;
+   height: 35px;
+      margin-right:5px;
+      vertical-align: middle;
 }
 
 .top::after {
-	content: "";
-	display: block;
-	clear: both;
+   content: "";
+   display: block;
+   clear: both;
 }
+
 /* 네비게이션 메뉴 */
 .top li a {
-	text-decoration: none;
-	color: black;
-	margin-left: 40px;
+   font-family: 'YUniverse-B';
+   text-decoration: none;
+   color: black;
+   margin-left: 20px;
+   font-size:16px;
+   color: #6F6D70;
+   padding: 0px 15px;
 }
 
 .top li a:hover {
-	color: #B586FF;
+   color: #6F6D70;
+      background-color: rgba(224, 175, 255, 0.2);
 }
 
 /* 네비게이션 로그인 */
 .top .login_message a {
-	float: right;
-	text-decoration: none;
-	color: black;
-	background-color: rgba(224, 175, 255, 0.2);
-	padding: 0px 60px;
-}
-/* 반응형 */
-@media ( max-width : 900px) {
-	.top {
-		width: 800px;
-	}
+   color: white;
+      margin-right: 15px;
 }
 
-.box1 {
-	margin-left: 80px;
-	padding-top: 220px;
-	width: 300px;
-	background-color: #fff1f1;
-	position: fixed;
-	height: 1000px;
-	float: none;
-	/*   border-right: 2px solid white; */
+.top .login_message a {
+   float: right;
+   text-decoration: none;
+   color: black;
+   background-color: rgba(224, 175, 255, 0.2);
+   padding: 0px 30px;
+   font-family: 'NanumSquareNeo-Variable';
+   margin-left:20px;
+   font-size: 14px;
+   color: white;
+}
+
+.top .login_message p {
+   font-family: 'NanumSquareNeo-Variable';
+   float: right;
+   font-size: 14px;
+   color: #D8C1FD;
+}
+
+ .top .login_message b {
+   font-family: 'NanumSquareNeo-Variable';
+   font-weight: 900;
+   font-size: 16px;
+   color: purple;
+   color: #6F6D70;
+   letter-spacing: 2px;
+}
+
+  /* 반응형 */
+  @media (max-width: 900px) {
+    .top { width: 800px; }
+  }
+
+  /* 브랜드 메뉴 */
+.box1{
+ 
+  padding-top: 220px;
+  width:220px;
+   /*  background-color: rgb(255, 241, 241, 0.3); */
+  position:fixed;
+  height:1000px;
+  float:none;
+/*   border-right: 2px solid white; */
+  
 }
 
 .menu {
-	text-decoration-line: none;
-	text-align: center;
-	height: 25px;
-	display: block;
-	padding: 20px;
-	font-size: 17px;
-	color: black;
-	background-color: #fff1f1;
-	list-style: none;
-	width: 210px;
-	border-bottom: 3px solid white;
-	border-top: 3px solid white;
-	font-family: 'NanumSquareNeo-Variable';
+  text-decoration-line: none;
+  text-align: center;
+  height:25px;
+  display:block;
+  padding: 20px;
+  font-size:17px;
+  color:black;
+  list-style:none;
+  width:210px;
+  font-family: 'NanumSquareNeo-Variable';
 }
 
-.brand a {
-	width: 210px;
-	text-align: center;
-	height: 30px;
-	display: block;
-	padding: 20px;
-	font-size: 20px;
-	color: #c7e4ff;
-	background-color: #fff1f1;
-	text-decoration-line: none;
-	border-bottom: 3px solid white;
-	border-top: 3px solid white;
-	font-family: 'NanumSquareNeo-Variable';
+.brand a { 
+  width:210px;
+  text-align: center;
+  height:30px;
+  display:block;
+  padding: 20px;
+  font-size:20px;
+  color:#d4b3fa;
+  text-decoration-line: none;
+  font-family: 'NanumSquareNeo-Variable';
+   }
+  
+.brand a:hover { 
+   background-color:aliceblue;
+   color: black;
+   animation: fadein 0.7s;
+   border-color:rgba(224, 175, 255, 0.2);
 }
 
-.brand a:hover {
-	background-color: aliceblue;
-	color: black;
-	border-color: rgba(224, 175, 255, 0.2);
-}
-
-.menu:hover {
-	background-color: aliceblue;
-	border-color: rgba(224, 175, 255, 0.2);
-}
-
-.box2 {
-	padding: 100px 70px 70px 420px;
-	background-color: #fff1f1;
-	float: none;
-	font-size: 21px;
-	width: auto;
-	height: auto;
-	margin-left: 0px;
-	text-decoration: underline;
-	text-decoration-color: white;
-	text-underline-offset: 16px;
-	position: static;
-	font-family: 'NanumSquareNeo-Variable';
-}
-
-.box2 p {
-	width: 500px;
-}
-
-.box3 {
-	right: 300px;
-	margin: 0;
-	padding: 10xp 0 0 0;
-	text-decoration: none;
-	text-decoration-line: none;
-	text-align: center;
-	float: none;
-	width: auto;
-	margin-top: 120px;
-	position: static;
-	margin-left: 1
-}
-
-.perfume li {
-	width: auto;
-}
-
-.box3 ul {
-	box-sizing: default;
-	margin: 10px;
-	list-style: none;
-	width: 300px;
-	height: 300px;
-	text-decoration-line: none;
-}
-
-.box3 li {
-	text-decoration: none
-}
-
-.box3:after {
-	content: "";
-	display: block;
-	clear: both;
-}
-
-.box3 img {
-	max-width: 270px;
-	max-height: 250px;
-	height: auto;
-	border: none;
-}
-
-.box3 ul {
-	float: left;
-	padding: 15px;
-	height: 330px;
-	background-color: white;
-	opacity: 100%;
-	width: 270px;
-	border-style: solid;
-	border-color: rgba(224, 175, 255, 0.2);
-	border-width: 2px;
-	font-size: 18px;
-	padding: 22px;
-	margin: 25px;
-	font-family: 'GowunBatang-Regular';
-}
-
-.box3 ul:before li {
-	display: none;
-}
-
-/* 태그정보 */
-.box3 ul:hover>li:first-child {
-	display: none;
-}
-
-.box3 ul:hover>figcaption {
-	opacity: 1;
-	text-align: center;
-	animation: fadein 1s;
-	color: white;
-	display: flex;
-	font-size: 20px;
-}
-
-
-
-to {
-	opacity: 1;
-}
-
-
-.box3 ul {
-	overflow: hidden;
-}
-
-.box3 .product .item {
-	width: 270px;
-	height: 360px;
-	display: block;
+.menu:hover { 
+   background-color:aliceblue;
+   animation: fadein 0.8s;
+   border-color:rgba(224, 175, 255, 0.2);
 }
 
 /*배경이미지 */
+.perfumebox {
+  background: url("/img/product_bg.png") center;
+  background-repeat : no-repeat;
+  background-size: cover;
+  max-height: 1000px;
+   /* height: 100vh;  */  
+}
+
+.perfumebox::after {
+   content: '';
+   display: block;  
+}
+
+.backimg {   
+  position: absolute;
+  left: 13%;
+  right:7.8%;
+  transform: translateX(-5.85%);
+  border: 3px solid #f5e0ec;
+}
+
 body {
-	margin: 0px;
-	background-image: url("/img/product_bg.png")
+  background-attachment:fixed;
+  background-repeat : no-repeat;
+  background-size: cover;
+  margin: 0px;
+  background-image: url("/img/product_bg.png")
 }
 
-.backimg {
-	position: absolute;
-	left: 10%;
-	transform: translateX(-5.85%);
-	border: 3px solid #f4dbf1
-}
-/*상품리스트 호버 수정 */
-.box3 ul:hover {
-	background-color: rgb(96, 96, 96);
-	opacity: 1;
-	border-radius: .5rem;
-	animation: fadein 0.6s;
+.box2 {
+  padding:100px 70px 70px 320px;
+  background-color: rgb(255, 241, 241, 0.7);
+  float:none;
+  font-size: 30px;
+  width:auto;
+  height:auto;
+  text-align: center;
+  text-decoration-color: white;
+  position:static;
+  font-family: 'NanumSquareNeo-Variable'; 
+  display: block;
+       }
+
+.box2 p {
+   font-family: 'Arita-buri-SemiBold';
+   text-align: center;
+   margin-bottom: -50px; 
+   padding-right:6%;
+   }
+
+/*페이징 */   
+.number li a{
+  text-decoration-line:none;
+  list-style:none;
+  text-align: center;
+  float: left;
+  padding: 30px;
+  position:relative;
+  left: 32%;
+  font-size: 15px;
+  
 }
 
-.number li a {
-	text-decoration-line: none;
-	list-style: none;
-	text-align: center;
-	float: left;
-	padding: 30px;
-	position: relative;
-	left: 450px;
-	font-size: 15px;
+.current {
+   color: pink;
+}
+
+ .box3 ul:before  {
+   display:none;
+}
+
+.box3:after {
+   content: "";
+   display: block;
+   clear: both;
+} 
+
+    /* 향수 제품 */ 
+.box3 {
+  margin: 0;
+  padding: 10xp 0 0 0;
+  text-decoration: none;
+  text-decoration-line:none;
+  text-align: center;
+  float: none;
+  width: auto;
+  margin-top: 120px;
+  margin-left: 0px;
+  position:static;  
+}
+
+.perfume li{ 
+width: auto;  
+}
+
+/* 향수 이미지 */
+.box3 img {
+   display: block;
+   margin: auto;
+   margin-top:30px;
+   max-width: 250px;
+   max-height: 250px; 
+   object-fit: fill;
+   border: none; 
+   text-align: center;
+}
+
+/* 향수 이미지 카드 상세 */
+figure.product {
+   border-radius: .5rem;
+   font-family: 'GowunBatang-Regular';
+   position: relative;
+   overflow: hidden;
+   margin: 25px;
+   width: 270px;
+   float:left;
+   padding:15px;
+   height: 345px; 
+   background:white; 
+   opacity: 100%;        
+   /* 글씨 */
+   text-align: center;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+   border-style: solid;
+   border-color:rgba(224, 175, 255, 0.2);
+   border-width: 2px; 
+   font-size: 18px;
+}
+
+figure.product * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  webkit-transition: all 0.45s ease-in-out;
+}
+
+figure.product figcaption {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  right: 20px;
+  bottom: 40px;
+}
+
+figure.product .heading {
+  overflow: hidden;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);  
+  bottom: 0;
+  width: 100%;
+  word-break: keep-all;
+}
+
+figure.product .caption {
+  overflow: hidden;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+figure.product h3,
+figure.product h2 {
+  display: table;
+  margin: 0 auto;
+  padding: 0 10px;
+  position: relative;
+  text-align: center;
+  width: auto;
+  font-weight: 400;
+}
+
+figure.product h3 span,
+figure.product h2 span {
+  font-weight: 800;
+}
+
+figure.product h3:before,
+figure.product h2:before,
+figure.product h3:after,
+figure.product h2:after {
+  position: absolute;
+  display: block;
+  width: 1000%;
+  height: 1px;
+  content: '';
+/*   background: white; */
+}
+
+figure.product h3:before,
+figure.product h2:before {
+  left: -1000%;
+}
+
+figure.product h3:before,
+figure.product h2:before {
+  right: -1000%;
+}
+
+figure.product h3:before,
+figure.product h3:before {
+  top: 50%;
+}
+
+figure.product h2 {
+  font-size: 0.9em;
+  font-weight: 500;
+} 
+
+figure.product h2:before,
+figure.product h2:after {
+  bottom: 50%;
+}
+
+/* 향수 이미지 카드 */
+figure.product .cardback p {
+  margin-top:140px;
+  margin-left:20px;
+  top: 20%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); 
+  width: 100%;  
+  opacity: 0;
+  line-height: 1.6em;
+  font-size: 0.9em;
+  transition: all 0.2s ease-in-out; 
+  word-break: keep-all;
+  text-align: left;
+} 
+
+/* 향수 이미지 카드 hover */
+figure.product:hover img,
+figure.product.hover img {
+  opacity: 0.1;
+}
+
+figure.product:hover,
+figure.product.hover {
+  background-color: rgb(96, 96, 96);
+  color: white;
+  opacity: 1; 
+  animation: fadein 0.8s;
+}
+
+figure.product:hover figcaption,
+figure.product.hover figcaption {
+  top: 7%; 
+  left: 20px;
+  right: 20px;
+  bottom: 10%; 
+  border: 1px solid white;
+  border-width: 0 1px;
+ transition: all 0.3s ease-in-out; 
+}
+
+figure.product:hover p,
+figure.product.hover p {   
+  opacity: 1; 
+  color : white;
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
 }

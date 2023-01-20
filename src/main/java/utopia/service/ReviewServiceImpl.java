@@ -29,7 +29,7 @@ public class ReviewServiceImpl implements ReviewService {
 	public List<ReviewDto> selectReviewList() throws Exception {
 		return reviewMapper.selectReviewList();
 	}
-
+	
 	public List<MemberDto> openReviewMember() throws Exception {
 		return reviewMapper.openReviewMember();
 	}
@@ -38,12 +38,13 @@ public class ReviewServiceImpl implements ReviewService {
 		return reviewMapper.openReviewBrand();
 	}
 
-	// 페이징
+	// 검색 조건과 일치하는 게시판 개수를 반환
 	@Override
 	public int selectReviewListCount() throws Exception {
 		return reviewMapper.selectReviewListCount();
 	}
 
+	// 검색 조건과 일치하는 게시판 중 offset에서부터 8개만 조회해서 반환
 	@Override
 	public List<ReviewDto> selectReviewListPage(int offset) throws Exception {
 		return reviewMapper.selectReviewListPage(offset);
@@ -70,17 +71,18 @@ public class ReviewServiceImpl implements ReviewService {
 		return savedFilePath;
 	}
 
-	// 리뷰 상세 조회
-	@Override
-	public ReviewDto selectReviewDetail(int reviewId) throws Exception {
-		return reviewMapper.selectReviewDetail(reviewId); // 게시판 상세 내용을 조회
-	}
-
+	// (사진 로드 시) 리뷰 아이디에 맞춰 리뷰 정보 조회
 	@Override
 	public ReviewDto selectReviewByReviewId(int reviewId) throws Exception {
 		return reviewMapper.selectReviewByReviewId(reviewId);
 	}
 
+	// 리뷰 상세 조회
+	@Override
+	public ReviewDto selectReviewDetail(int reviewId) throws Exception {
+		return reviewMapper.selectReviewDetail(reviewId); // 게시판 상세 내용을 조회
+	}
+		
 	// 리뷰 수정
 	@Override
 	public void updateReview(ReviewDto reviewDto) throws Exception {
@@ -92,5 +94,4 @@ public class ReviewServiceImpl implements ReviewService {
 	public void deleteReview(int reviewId) throws Exception {
 		reviewMapper.deleteReview(reviewId);
 	}
-
 }

@@ -21,9 +21,8 @@ public class PerfumeController {
 	@Autowired
 	private PerfumeService perfumeService ;
 	
-	//브랜드를 클릭했을때, 전체 향수 리스트를 출력
-	
-	 // 각각의(5개) 브랜드를 클릭했을때, 그 브랜드별 향수 리스트를 출력 
+		// 제품 목록 버튼을 클릭했을 때, 전체 향수 리스트를 출력
+		// 각각의(5개) 브랜드명 버튼을 클릭했을 때, 해당 브랜드의 향수 리스트를 출력 
 	   @GetMapping("/utopia/perfume")   
 	   public ModelAndView perfume(
 	         @RequestParam(value = "brandId", required = false, defaultValue = "0") int brandId, 
@@ -37,7 +36,7 @@ public class PerfumeController {
 	         
 	         mv.addObject("pageCount", Math.ceil(perfumeService.selectPerfumeListCount() / 30.0));
 	         mv.addObject("currentPage", currentPage);
-	            
+	         
 	      } else {
 	         List<PerfumeDto> list = perfumeService.selectBrandPerfumeList(brandId);
 	         mv.addObject("perfumeList", list);
@@ -47,20 +46,14 @@ public class PerfumeController {
 	      List<BrandDto> brandDto = perfumeService.selectBrandList();
 	      mv.addObject("brandList", brandDto);
 	      
-	      
-	      
-	         return mv;   
+	      return mv;   
 	   }
 
-	
-
+	   // 좋아요 수 업데이트 기능
 	  @RequestMapping("/utopia/updateThumbsCount")
 	  public String UpdateThumbsCount(int perfumeId) throws Exception { 
 		  perfumeService.updateThumbsCount(perfumeId); 
 		  return "redirect:/utopia/perfume";
 	 }
-	
-
-	
 }
 
