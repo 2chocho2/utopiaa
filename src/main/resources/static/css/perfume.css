@@ -44,7 +44,7 @@
 }
 
 @media ( max-width : 900px) {
-   .menu {
+   .brandmenu {
       width: 800px;
    }
 }
@@ -70,7 +70,7 @@
    z-index: 1;
 }
 
-.top {
+.menu {
    height: 60px;
    line-height: 60px;
    font-size: 14px;
@@ -80,24 +80,24 @@
 }
 
 /* 네비게이션 로고 */
-.top a {
+.menu a {
    float: left;
 }
 
-.top a img {
+.menu a img {
    height: 35px;
-      margin-right:5px;
-      vertical-align: middle;
+   margin-right:5px;
+   vertical-align: middle;
 }
 
-.top::after {
+.menu::after {
    content: "";
    display: block;
    clear: both;
 }
 
 /* 네비게이션 메뉴 */
-.top li a {
+.menu li a {
    font-family: 'YUniverse-B';
    text-decoration: none;
    color: black;
@@ -107,18 +107,18 @@
    padding: 0px 15px;
 }
 
-.top li a:hover {
+.menu li a:hover {
    color: #6F6D70;
-      background-color: rgba(224, 175, 255, 0.2);
+   background-color: rgba(224, 175, 255, 0.2);
 }
 
 /* 네비게이션 로그인 */
-.top .login_message a {
+.menu .login_message i {
    color: white;
-      margin-right: 15px;
+   margin-right: 15px;
 }
 
-.top .login_message a {
+.menu .login_message a {
    float: right;
    text-decoration: none;
    color: black;
@@ -128,16 +128,18 @@
    margin-left:20px;
    font-size: 14px;
    color: white;
+   width: 150px;
+   text-align: center;
 }
 
-.top .login_message p {
+.menu .login_message p {
    font-family: 'NanumSquareNeo-Variable';
    float: right;
    font-size: 14px;
    color: #D8C1FD;
 }
 
- .top .login_message b {
+ .menu .login_message b {
    font-family: 'NanumSquareNeo-Variable';
    font-weight: 900;
    font-size: 16px;
@@ -147,38 +149,56 @@
 }
 
   /* 반응형 */
-  @media (max-width: 900px) {
-    .top { width: 800px; }
+  @media (max-width: 1100px) {
+    .menu { width: 1000px; }
+    .backimg { width: 1000px; }
+    .box1 { width: 900px; }
+    .box2 { width: 1000px; }
+    .box3 { width: 1000px; }
   }
+  
+  /* 배경 */
 
+
+body {
+  background-attachment:fixed;
+  background-repeat : no-repeat;
+  background-size: cover;
+  text-align:center;
+  background-image: url("/img/product_bg.png");
+}
+
+.backimg {   
+  margin: auto;
+  display: inline-block;
+}
   /* 브랜드 메뉴 */
 .box1{
- 
-  padding-top: 220px;
+  padding-top: 300px;
   width:220px;
-   /*  background-color: rgb(255, 241, 241, 0.3); */
   position:fixed;
-  height:1000px;
+  height:100%;
   float:none;
-/*   border-right: 2px solid white; */
+  overflow: auto;
+  margin-left: 20px;
   
 }
 
-.menu {
+.brandmenu {
   text-decoration-line: none;
   text-align: center;
+  boxsizing: border-box;
   height:25px;
+  line-height: 25px;
   display:block;
   padding: 20px;
   font-size:17px;
   color:black;
   list-style:none;
-  width:210px;
   font-family: 'NanumSquareNeo-Variable';
 }
 
 .brand a { 
-  width:210px;
   text-align: center;
   height:30px;
   display:block;
@@ -196,7 +216,7 @@
    border-color:rgba(224, 175, 255, 0.2);
 }
 
-.menu:hover { 
+.brandmenu:hover { 
    background-color:aliceblue;
    animation: fadein 0.8s;
    border-color:rgba(224, 175, 255, 0.2);
@@ -216,37 +236,26 @@
    display: block;  
 }
 
-.backimg {   
-  position: absolute;
-  left: 13%;
-  right:7.8%;
-  transform: translateX(-5.85%);
-  border: 3px solid #f5e0ec;
-}
-
-body {
-  background-attachment:fixed;
-  background-repeat : no-repeat;
-  background-size: cover;
-  margin: 0px;
-  background-image: url("/img/product_bg.png")
-}
-
 .box2 {
-  padding:100px 70px 70px 320px;
+  padding:100px 50px 70px 280px;
   background-color: rgb(255, 241, 241, 0.7);
-  float:none;
-  font-size: 30px;
-  width:auto;
+  float:left;
+  font-size: 25px;
+  width: 1410px;
   height:auto;
   text-align: center;
-  text-decoration-color: white;
   position:static;
   font-family: 'NanumSquareNeo-Variable'; 
-  display: block;
-       }
+  text-decoration: underline 1px;
+  text-decoration-color: black;
+  text-underline-offset: 16px;
+  margin: auto;
+  display: inline-block;   
+  box-sizing: border-box;
+}
 
 .box2 p {
+
    font-family: 'Arita-buri-SemiBold';
    text-align: center;
    margin-bottom: -50px; 
@@ -283,7 +292,6 @@ body {
     /* 향수 제품 */ 
 .box3 {
   margin: 0;
-  padding: 10xp 0 0 0;
   text-decoration: none;
   text-decoration-line:none;
   text-align: center;

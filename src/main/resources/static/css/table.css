@@ -43,35 +43,34 @@
    z-index: 1;
 }
 
-.top {
-   overflow:hidden;
+.menu {
    height: 60px;
    line-height: 60px;
    font-size: 14px;
    padding-left: 100px;
    padding-right: 100px;
-  background-color: rgb(255, 255, 255, 0.9); 
+   background-color: rgb(255, 255, 255);  
 }
 
 /* 네비게이션 로고 */
-.top a {
+.menu a {
    float: left;
 }
 
-.top a img {
+.menu a img {
    height: 35px;
-      margin-right:5px;
-      vertical-align: middle;
+   margin-right:5px;
+   vertical-align: middle;
 }
 
-.top::after {
+.menu::after {
    content: "";
    display: block;
    clear: both;
 }
 
 /* 네비게이션 메뉴 */
-.top li a {
+.menu li a {
    font-family: 'YUniverse-B';
    text-decoration: none;
    color: black;
@@ -81,18 +80,18 @@
    padding: 0px 15px;
 }
 
-.top li a:hover {
+.menu li a:hover {
    color: #6F6D70;
-      background-color: rgba(224, 175, 255, 0.2);
+   background-color: rgba(224, 175, 255, 0.2);
 }
 
 /* 네비게이션 로그인 */
-.top .login_message a {
+.menu .login_message i {
    color: white;
-      margin-right: 15px;
+   margin-right: 15px;
 }
 
-.top .login_message a {
+.menu .login_message a {
    float: right;
    text-decoration: none;
    color: black;
@@ -102,16 +101,18 @@
    margin-left:20px;
    font-size: 14px;
    color: white;
+   width: 150px;
+   text-align: center;
 }
 
-.top .login_message p {
+.menu .login_message p {
    font-family: 'NanumSquareNeo-Variable';
    float: right;
    font-size: 14px;
    color: #D8C1FD;
 }
 
- .top .login_message b {
+ .menu .login_message b {
    font-family: 'NanumSquareNeo-Variable';
    font-weight: 900;
    font-size: 16px;
