@@ -151,7 +151,7 @@ body {
 .container h2 {
    box-sizing: border-box;
     width: 88px;
-   border-bottom: solid white 2px;
+   border-bottom: solid black 1px;
    text-align: center;
    margin-left: 302px;
    margin-top: 70px;
@@ -376,7 +376,7 @@ input.btn:hover {
 
 
 .debtn {
-   margin-right: 350px;
+   margin-right: 300px;
 }
 input.subbtn {
     display: inline-block;
